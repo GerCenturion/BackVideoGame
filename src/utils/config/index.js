@@ -10,4 +10,5 @@ module.exports = {
   dbName: process.env.DB_NAME,
   PORT: process.env.PORT,
   API_KEY: process.env.API_KEY,
+  DB_URL: process.env.DB_URL,
 };

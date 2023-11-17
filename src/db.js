@@ -6,6 +6,8 @@ const { dbUser, dbPassword, dbHost, dbName } = require("./utils/config");
 
 const sequelize = new Sequelize(
   `postgres://${dbUser}:${dbPassword}@${dbHost}/${dbName}`,
+  // `postgres://bdvideogame_user:3rXpVokmCjIOSVDSM0VBirjO5uXP2wWj@dpg-clbb6cmnt67s73ad0qk0-a.oregon-postgres.render.com/bdvideogame`,
+
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
