@@ -4,7 +4,8 @@ const axios = require("axios");
 const { VIDEOGAMES_URL } = require("../constants");
 const { v4: uuidv4 } = require("uuid");
 const { response } = require("express");
-const config = require('../utils/config');
+const config = require("../utils/config");
+const backendURL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3001";
 
 const APIKEY = "key=" + config.API_KEY;
 
@@ -15,7 +16,7 @@ class VideogameModel extends Modelo {
   getAll = (req, res, next) => {
     const { name } = req.query;
     if (name) {
-      const videogames = axios.get("http://localhost:3001/api/videogames/");
+      const videogames = axios.get(`${backendURL}/api/videogames/`);
       videogames
         .then((response) => {
           const games = response.data;
