@@ -16,8 +16,10 @@ server.name = "API";
 // Configuración del middleware CORS
 server.use(cors());
 
+// Puedes combinar las configuraciones de bodyParser en una sola llamada
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
+
 server.use(cookieParser());
 server.use(morgan("dev"));
 server.use(setHeaders);
